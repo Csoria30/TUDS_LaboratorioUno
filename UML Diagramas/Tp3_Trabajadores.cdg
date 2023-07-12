@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tp3_Trabajadores">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="507.0" yPosition="19.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="dni" type="String" visibility="protected"/>
+        <Field name="fechaNacimiento" type="LocalDate" visibility="protected"/>
+        <Field name="domicilio" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fecjaNacimiento"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="setNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setDNI" returnType="String" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="getFechaNacimiento" returnType="LocalDate" visibility="public"/>
+        <Method name="setFechaNacimiento" returnType="LocalDate" visibility="public">
+          <Argument type="LocalDate" name="fechaNacimiento"/>
+        </Method>
+        <Method name="getDomicilio" returnType="String" visibility="public"/>
+        <Method name="setDomicilio" returnType="String" visibility="public">
+          <Argument type="String" name="domicilio"/>
+        </Method>
+        <Method name="calcularEdad" returnType="int" visibility="public"/>
+        <Method name="calcularDiasVividos" returnType="int" visibility="public"/>
+        <Method name="cobrar" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Trabajador" package="" visibility="public" xPosition="259.0" yPosition="551.0">
+      <Fields>
+        <Field name="sueldo" type="Float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fechaNacimiento"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cobrar" returnType="Float" visibility="public">
+          <Argument type="Float" name="sueldo"/>
+        </Method>
+        <Method name="hacerAportes" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jubilado" package="" visibility="public" xPosition="746.0" yPosition="551.0">
+      <Fields>
+        <Field name="sueldo" type="Float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fechaNacimiento"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cobrar" returnType="Float" visibility="public">
+          <Argument type="Float" name="sueldo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Registro" package="" visibility="public" xPosition="105.0" yPosition="179.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="procedarDatos" returnType="Persona" visibility="public">
+          <Argument type="Persona" name="persona"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Aportes" package="" visibility="public" xPosition="17.0" yPosition="585.0">
+      <Methods>
+        <Method name="hacerAportes" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Test" package="" visibility="public" xPosition="1081.0" yPosition="141.0">
+      <Fields>
+        <Field name="registro" type="Registro" visibility="private"/>
+        <Field name="trabajador" type="Persona" visibility="private"/>
+        <Field name="jubilado" type="Persona" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="Necesita" source="Registro" target="Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Trabajador" target="Persona"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Trabajador" target="Aportes"/>
+    <IsRelation name="is" source="Jubilado" target="Persona"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

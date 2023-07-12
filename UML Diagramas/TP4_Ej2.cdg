@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TP4_Ej2">
+  <ClassDiagramComponents>
+    <Class name="Computadora" package="" visibility="public" xPosition="237.0" yPosition="35.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="procesar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Procesador" package="" visibility="public" xPosition="256.0" yPosition="274.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Teclado" package="" visibility="public" xPosition="51.0" yPosition="274.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Mouse" package="" visibility="public" xPosition="462.0" yPosition="274.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Impresora" package="" visibility="public" isAbstract="true" xPosition="963.0" yPosition="23.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Laser" package="" visibility="public" xPosition="885.0" yPosition="274.0">
+      <Fields>
+        <Field name="toner" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="remplazarToner" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Chorro" package="" visibility="public" xPosition="1083.0" yPosition="274.0">
+      <Fields>
+        <Field name="tinta" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cargarTinta" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Matricial" package="" visibility="public" xPosition="1266.0" yPosition="274.0">
+      <Fields>
+        <Field name="cinta" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="remplazarCinta" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Impresora_" package="" visibility="public" xPosition="304.0" yPosition="493.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="" visibility="public" xPosition="578.0" yPosition="484.0">
+      <Fields>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="rol" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerReporte" returnType="Impresora_" visibility="public">
+          <Argument type="Impresora" name="impresora"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene un" source="Computadora" target="Teclado" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Tiene un" source="Computadora" target="Mouse" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Chorro" target="Impresora"/>
+    <HasRelation name="Contiene un " source="Computadora" target="Procesador" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Matricial" target="Impresora"/>
+    <IsRelation name="is" source="Laser" target="Impresora"/>
+    <UseRelation name="" source="Usuario" target="Impresora_" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

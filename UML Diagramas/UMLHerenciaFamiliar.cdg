@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UMLHerenciaFamiliar">
+  <ClassDiagramComponents>
+    <Class name="Padre" package="" visibility="public" xPosition="991.0" yPosition="162.0">
+      <Fields>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="casa" type="Casa" visibility="protected"/>
+        <Field name="auto" type="Auto" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="seCantar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Auto" package="" visibility="public" xPosition="1325.0" yPosition="162.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hijo" package="" visibility="public" xPosition="865.0" yPosition="506.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dinero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Casa" package="" visibility="public" xPosition="1325.0" yPosition="337.0">
+      <Fields>
+        <Field name="direccion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MediaHermana" package="" visibility="public" xPosition="1116.0" yPosition="506.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="Madre" package="" visibility="public" xPosition="517.0" yPosition="162.0">
+      <Methods>
+        <Method name="heredarDinero" returnType="void" visibility="public">
+          <Argument type="int" name="dinero"/>
+        </Method>
+        <Method name="seBailar" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Hermano" package="" visibility="public" xPosition="517.0" yPosition="429.0">
+      <Methods>
+        <Method name="seJugarFutbol" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene" source="Padre" target="Casa" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <IsRelation name="is" source="Hijo" target="Padre"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Hijo" target="Hermano"/>
+    <IsRelation name="is" source="MediaHermana" target="Padre"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Hijo" target="Madre"/>
+    <HasRelation name="Tiene" source="Padre" target="Auto" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

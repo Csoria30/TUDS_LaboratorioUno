@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Uml">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="" visibility="public" xPosition="52.0" yPosition="93.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Rueda" package="" visibility="public" xPosition="353.0" yPosition="93.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="Usa" source="Auto" target="Rueda" sourceCardinality="1..*" targetCardinality="1..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

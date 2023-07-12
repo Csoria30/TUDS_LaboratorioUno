@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="reloj">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" xPosition="169.0" yPosition="22.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private" isFinal="true"/>
+        <Field name="apellido" type="String" visibility="private" isFinal="true"/>
+        <Field name="edad" type="int" visibility="private" isFinal="true"/>
+        <Field name="altura" type="float" visibility="private" isFinal="true"/>
+        <Field name="unReloj" type="Abstract Reloj" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="float" name="altura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="getAltura" returnType="float" visibility="public">
+          <Argument type="float" name="altura"/>
+        </Method>
+        <Method name="hablar" returnType="String" visibility="public">
+          <Argument type="String" name="frase"/>
+        </Method>
+        <Method name="comer" returnType="String" visibility="public">
+          <Argument type="String" name="comida"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Abstract Reloj" package="" visibility="public" xPosition="210.0" yPosition="385.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="dia" type="LocalDate" visibility="private" isFinal="true"/>
+        <Field name="hora" type="LocalTime" visibility="private" isFinal="true"/>
+        <Field name="modelo" type="String" visibility="private" isFinal="true"/>
+        <Field name="numSerie" type="long" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="modelo"/>
+          <Argument type="long" name="numSerie"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDia" returnType="LocalDate" visibility="public"/>
+        <Method name="getHora" returnType="LocalTime" visibility="public"/>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="getNumserie" returnType="long" visibility="public"/>
+        <Method name="incrementarDia" returnType="void" visibility="public"/>
+        <Method name="incrementarHora" returnType="void" visibility="public"/>
+        <Method name="limpiarPantalla" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene " source="Persona" target="Abstract Reloj" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

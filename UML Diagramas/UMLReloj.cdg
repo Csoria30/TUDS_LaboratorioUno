@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="reloj">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" xPosition="486.0" yPosition="19.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="altura" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="float" name="altura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getAltura" returnType="float" visibility="public">
+          <Argument type="float" name="altura"/>
+        </Method>
+        <Method name="hablar" returnType="void" visibility="public">
+          <Argument type="String" name="frase"/>
+        </Method>
+        <Method name="comer" returnType="void" visibility="public">
+          <Argument type="String" name="comida"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Reloj" package="" visibility="public" xPosition="464.0" yPosition="362.0">
+      <Fields>
+        <Field name="dia" type="LocalDate" visibility="private"/>
+        <Field name="hora" type="LocalTime" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="numSerie" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="LocalDate" name="dia"/>
+          <Argument type="LocalTime" name="hora"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="long" name="numSerie"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDia" returnType="LocalDate" visibility="public"/>
+        <Method name="getHora" returnType="LocalTime" visibility="public"/>
+        <Method name="getModelo" returnType="String" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getNumserie" returnType="long" visibility="public">
+          <Argument type="long" name="numSerie"/>
+        </Method>
+        <Method name="incrementarDia" returnType="void" visibility="public"/>
+        <Method name="incrementarHora" returnType="void" visibility="public"/>
+        <Method name="limpiarPantalla" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="Usa" source="Persona" target="Reloj" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UMLHerenciaAnimal">
+  <ClassDiagramComponents>
+    <Class name="&lt;Abstract&gt; Animal" package="" visibility="public" xPosition="730.0" yPosition="70.0">
+      <Fields>
+        <Field name="raza" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="abstractcomer" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="&lt;Abstract&gt; Mamifero" package="" visibility="public" xPosition="310.0" yPosition="243.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Perro" package="" visibility="public" xPosition="402.0" yPosition="468.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

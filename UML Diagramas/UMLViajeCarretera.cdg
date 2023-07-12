@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Viaje_Carretera">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="viaje_carretera" visibility="public" isAbstract="true" xPosition="619.0" yPosition="691.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoDeCombustible" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Camion" package="viaje_carretera" visibility="public" isAbstract="true" xPosition="1093.0" yPosition="691.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoDeCombustible" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Camioneta" package="viaje_carretera" visibility="public" isAbstract="true" xPosition="1587.0" yPosition="691.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoDeCombustible" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ciudad" package="viaje_carretera" visibility="public" xPosition="224.0" yPosition="691.0">
+      <Fields>
+        <Field name="ciudadOrigen" type="String" visibility="private"/>
+        <Field name="numRuta" type="float" visibility="private"/>
+        <Field name="kmRuta" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="ciudadOrigen"/>
+          <Argument type="float" name="numRuta"/>
+          <Argument type="float" name="kmRuta"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCiudadOrigen" returnType="String" visibility="public"/>
+        <Method name="setCiudadOrigen" returnType="void" visibility="public">
+          <Argument type="String" name="ciudadOrigen"/>
+        </Method>
+        <Method name="getNumRuta" returnType="float" visibility="public"/>
+        <Method name="setNumRuta" returnType="void" visibility="public">
+          <Argument type="float" name="numRuta"/>
+        </Method>
+        <Method name="getKmRuta" returnType="float" visibility="public"/>
+        <Method name="setKlmRuta" returnType="void" visibility="public">
+          <Argument type="float" name="kmRuta"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Combustible" package="viaje_carretera" visibility="public" xPosition="1605.0" yPosition="137.0">
+      <Fields>
+        <Field name="tipoCimbustible" type="String" visibility="private"/>
+        <Field name="precio" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipoCimbustible"/>
+          <Argument type="float" name="precio"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getTipoCimbustible" returnType="String" visibility="public"/>
+        <Method name="setTipoCimbustible" returnType="void" visibility="public">
+          <Argument type="String" name="tipoCimbustible"/>
+        </Method>
+        <Method name="getPrecio" returnType="float" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="float" name="precio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="viaje_carretera" visibility="public" isAbstract="true" xPosition="1009.0" yPosition="128.0">
+      <Fields>
+        <Field name="tipoVehiculo" type="String" visibility="protected"/>
+        <Field name="marca" type="String" visibility="protected"/>
+        <Field name="patente" type="String" visibility="protected"/>
+        <Field name="combustible" type="Combustible" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoDeCombustible" returnType="float" visibility="public" isAbstract="true">
+          <Argument type="float" name="distancia"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Viaje" package="viaje_carretera" visibility="public" xPosition="11.0" yPosition="20.0">
+      <Fields>
+        <Field name="origen" type="Ciudad" visibility="private"/>
+        <Field name="destino" type="Ciudad" visibility="private"/>
+        <Field name="distancia" type="float" visibility="private"/>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+        <Field name="cantPeajes" type="int" visibility="private"/>
+        <Field name="peaje" type="float" visibility="private"/>
+        <Field name="peajeCostoTotal" type="float" visibility="private"/>
+        <Field name="costoCombustible" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Ciudad" name="origen"/>
+          <Argument type="Ciudad" name="destino"/>
+          <Argument type="float" name="distancia"/>
+          <Argument type="Vehiculo" name="vehiculo"/>
+          <Argument type="int" name="cantPeajes"/>
+          <Argument type="float" name="peaje"/>
+          <Argument type="float" name="peajeCostoTotal"/>
+          <Argument type="float" name="costoCombustible"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Ciudad" name="origen"/>
+          <Argument type="Ciudad" name="destino"/>
+          <Argument type="Vehiculo" name="vehiculo"/>
+          <Argument type="int" name="cantPeajes"/>
+          <Argument type="float" name="costoCombustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calculoDistacia" returnType="float" visibility="public"/>
+        <Method name="calculoCostoPeaje" returnType="float" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="calculoCostoCombustible" returnType="float" visibility="public"/>
+        <Method name="calculoCostotal" returnType="float" visibility="public"/>
+        <Method name="getOrigen" returnType="Ciudad" visibility="public"/>
+        <Method name="setOrigen" returnType="void" visibility="public">
+          <Argument type="Ciudad" name="origen"/>
+        </Method>
+        <Method name="getDestino" returnType="Ciudad" visibility="public"/>
+        <Method name="setDestino" returnType="void" visibility="public">
+          <Argument type="Ciudad" name="destino"/>
+        </Method>
+        <Method name="getDistancia" returnType="float" visibility="public"/>
+        <Method name="setDistancia" returnType="void" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+        <Method name="getVehiculo" returnType="Vehiculo" visibility="public"/>
+        <Method name="setVehiculo" returnType="void" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="getCantPeajes" returnType="int" visibility="public"/>
+        <Method name="setCantPeajes" returnType="void" visibility="public">
+          <Argument type="int" name="cantPeajes"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Viaje_Carretera" package="viaje_carretera" visibility="public" xPosition="1763.0" yPosition="429.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="pausa" returnType="void" visibility="package" isStatic="true">
+          <Argument type="String" name="info"/>
+        </Method>
+        <Method name="numeroEntreRango" returnType="int" visibility="public" isStatic="true">
+          <Argument type="int" name="minimo"/>
+          <Argument type="int" name="maximo"/>
+        </Method>
+        <Method name="validarEntero" returnType="int" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="validarFloat" returnType="float" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="viaje_carretera.Viaje" target="viaje_carretera.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="viaje_carretera.Camioneta" target="viaje_carretera.Vehiculo"/>
+    <HasRelation name="vehiculo" source="viaje_carretera.Viaje" target="viaje_carretera.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="origen" source="viaje_carretera.Viaje" target="viaje_carretera.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="destino" source="viaje_carretera.Viaje" target="viaje_carretera.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="viaje_carretera.Viaje" target="viaje_carretera.Ciudad" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="viaje_carretera.Camion" target="viaje_carretera.Vehiculo"/>
+    <IsRelation name="is" source="viaje_carretera.Auto" target="viaje_carretera.Vehiculo"/>
+    <HasRelation name="combustible" source="viaje_carretera.Vehiculo" target="viaje_carretera.Combustible" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UMLSeñoraDeLosGatos">
+  <ClassDiagramComponents>
+    <Class name="Señora" package="" visibility="public" xPosition="331.0" yPosition="189.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="adoptarMascota" returnType="Callejero" visibility="public">
+          <Argument type="Callejero" name="callejero"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Gato" package="" visibility="public" xPosition="729.0" yPosition="422.0">
+      <Fields>
+        <Field name="tienePulgas" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="yaSeEmpulgo" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Abstract Mascota" package="" visibility="public" xPosition="818.0" yPosition="189.0">
+      <Fields>
+        <Field name="apodo" type="String" visibility="private"/>
+        <Field name="sexo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+        <Method name="sePuedeVacunar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Perro" package="" visibility="public" xPosition="896.0" yPosition="422.0">
+      <Fields>
+        <Field name="enfermoMoquillo" type="boolean" visibility="private"/>
+        <Field name="garrapatas" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="enfermoMoquillo" returnType="boolean" visibility="public"/>
+        <Method name="tieneGarrapatas" returnType="boolean" visibility="public"/>
+        <Method name="contrajoGarrapatas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Lechuza" package="" visibility="public" xPosition="1212.0" yPosition="485.0">
+      <Fields>
+        <Field name="calmada" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="serCalmarse" returnType="void" visibility="public"/>
+        <Method name="setEnojarse" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="Es una" source="Gato" target="Abstract Mascota"/>
+    <IsRelation name="Es una" source="Perro" target="Abstract Mascota"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
