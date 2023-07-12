@@ -1,0 +1,10 @@
+Perfil Administrativo
+Usuario: cristians
+Contraseña: 1234
+
+Perfil Alumno
+Usuario: alumno
+Contraseña: 1111
+
+
+Laboratorio 1 - Grupo 11.
